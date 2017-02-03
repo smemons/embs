@@ -1,0 +1,40 @@
+
+
+<div class="col-md-6 col-md-offset-3">
+    <h2>New Room</h2>
+    <form name="form" (ngSubmit)="f.form.valid && createRoom()" #f="ngForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !roomName.valid }">
+            <label for="Room Name">Room Name</label>
+            <input type="text" class="form-control" name="roomName" [(ngModel)]="model.roomName" #roomName="ngModel" required />
+            <div *ngIf="f.submitted && !roomName.valid" class="help-block">Room Name is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !areaName.valid }">
+            <label for="areaName">Area Name</label>
+           <select class="form-control" id="area"  name="areaName" [(ngModel)]="model.areaName" #areaName="ngModel" required>
+              <option>Area 1</option>
+              <option>Area 2</option>
+              <option>Area 3</option>
+              <option>Area 4</option>
+            </select>
+
+        </div>
+        <div class="row">
+        <div class="form-group col-xs-6" [ngClass]="{ 'has-error': f.submitted && !long.valid }">
+            <label for="long">Longitude</label>
+            <input type="text" class="form-control" name="long" [(ngModel)]="model.long" #long="ngModel" required />
+      </div>
+      <div class="form-group col-xs-6" [ngClass]="{ 'has-error': f.submitted && !lat.valid }">
+
+            <label for="lat">Latitude</label>
+            <input type="text" class="form-control" name="lat" [(ngModel)]="model.lat" #lat="ngModel" required />
+            <div *ngIf="f.submitted && !lat.valid && !long.valid" class="help-block">Longitude/Latitude is required</div>
+      </div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Create</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+            />
+            <a [routerLink]="['/newRoom']" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>

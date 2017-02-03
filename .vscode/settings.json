@@ -1,0 +1,8 @@
+ {
+"typescript.check.workspaceVersion":false,
+"jscs.enable":false,
+"react.beautify.onSave":true,
+"path-intellisense.extensionOnImport":true,
+"path-intellisense.showHiddenFiles":true,
+"path-intellisense.autoSlashAfterDirectory":true
+ }

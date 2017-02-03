@@ -1,0 +1,11 @@
+.center-box {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+img {
+  position: relative;
+  margin: auto;
+  width: 100%
+}
