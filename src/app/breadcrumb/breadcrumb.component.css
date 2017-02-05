@@ -1,37 +1,21 @@
 .breadcrumb {
     padding: 0px;
-    background: #D4D4D4;
+    background: transparent;
     list-style: none;
     overflow: hidden;
     margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.breadcrumb>li {
+    display: table-cell;
+    vertical-align: top;
+    width: 1%;
 }
 
 .breadcrumb>li+li:before {
     padding: 0;
-}
-
-.breadcrumb li {
-    float: left;
-}
-
-.breadcrumb li.active a {
-    background: brown;
-    /* fallback color */
-    background: #ffc107;
-}
-
-.breadcrumb li.completed a {
-    background: brown;
-    /* fallback color */
-    background: hsla(153, 57%, 51%, 1);
-}
-
-.breadcrumb li.active a:after {
-    border-left: 30px solid #ffc107;
-}
-
-.breadcrumb li.completed a:after {
-    border-left: 30px solid hsla(153, 57%, 51%, 1);
 }
 
 .breadcrumb li a {
@@ -39,24 +23,36 @@
     text-decoration: none;
     padding: 10px 0 10px 45px;
     position: relative;
-    display: block;
-    float: left;
+    display: inline-block;
+    width: calc( 100% - 10px);
+    background-color: hsla(0, 0%, 83%, 1);
+    text-align: center;
+    text-transform: capitalize;
 }
 
-.breadcrumb li a:after {
-    content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    /* Go big on the size, and let overflow hide */
-    border-bottom: 50px solid transparent;
-    border-left: 30px solid hsla(0, 0%, 83%, 1);
-    position: absolute;
-    top: 50%;
-    margin-top: -50px;
-    left: 100%;
-    z-index: 2;
+.breadcrumb li.completed a {
+    background: brown;
+    background: hsla(153, 57%, 51%, 1);
+}
+
+.breadcrumb li.completed a:after {
+    border-left: 30px solid hsla(153, 57%, 51%, 1);
+}
+
+.breadcrumb li.active a {
+    background: #ffc107;
+}
+
+.breadcrumb li.active a:after {
+    border-left: 30px solid #ffc107;
+}
+
+.breadcrumb li:first-child a {
+    padding-left: 15px;
+}
+
+.breadcrumb li:last-of-type a {
+    width: calc( 100% - 38px);
 }
 
 .breadcrumb li a:before {
@@ -65,7 +61,6 @@
     width: 0;
     height: 0;
     border-top: 50px solid transparent;
-    /* Go big on the size, and let overflow hide */
     border-bottom: 50px solid transparent;
     border-left: 30px solid white;
     position: absolute;
@@ -76,18 +71,6 @@
     z-index: 1;
 }
 
-.breadcrumb li:first-child a {
-    padding-left: 15px;
-}
-
-.breadcrumb li a:hover {
-    background: #ffc107;
-}
-
-.breadcrumb li a:hover:after {
-    border-left-color: #ffc107 !important;
-}
-
 .breadcrumb li a:after {
     content: " ";
     display: block;
@@ -103,10 +86,22 @@
     z-index: 2;
 }
 
+.breadcrumb li div {
+    color: white;
+    text-decoration: none;
+    padding: 1px 0 1px 45px;
+    position: relative;
+    display: block;
+    float: right;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
 .fixed-height {
     min-height: 20;
     max-height: 20;
-    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .vertical-line {

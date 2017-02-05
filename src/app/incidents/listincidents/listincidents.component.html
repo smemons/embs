@@ -1,7 +1,7 @@
 <div class="container">
     <div class="list-group">
 
-        <a *ngFor="inc  of incs" class="list-group-item">
+        <a *ngFor="let inc of incs" class="list-group-item">
 
             <div class="media">
                 <span class="label label-danger pull-right">3 Rooms</span>
@@ -18,10 +18,10 @@
                     <button (click)="incSelected($event)" class="btn btn-danger ">Select </button>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading">{{inc.incTitle}}</h4>
+                    <h4 class="media-heading">{{inc.title}}</h4>
                     <p>{{inc.desc}} </p>
                     <p>{{inc.roomName}} </p>
-                    <p>{{room.createdAt|date:'medium'}} </p>
+                    <p>{{inc.createdAt|date:'medium'}} </p>
                 </div>
 
             </div>

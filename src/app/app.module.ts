@@ -20,7 +20,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ChartModule, GMapModule, GalleriaModule, PanelModule, FieldsetModule, GrowlModule, CarouselModule } from 'primeng/primeng';
+import { DialogModule,ChartModule, GMapModule, GalleriaModule, PanelModule, FieldsetModule, GrowlModule, CarouselModule } from 'primeng/primeng';
 
 
 
@@ -74,6 +74,7 @@ import { ListincidentsComponent } from './incidents/listincidents/listincidents.
     GrowlModule,
     CarouselModule,
     ChartModule,
+    DialogModule,
     RouterModule.forRoot(ROUTES)
 
   ],
