@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="list-group">
+
+        <a *ngFor="let room of rooms" class="list-group-item">
+
+            <div class="media">
+                <span class="label label-danger pull-right">3 Incidents</span>
+                <div class="pull-right button">
+                    <input type="button" class="btn btn-danger btn-xs" class="pull-right" value="Delete" />
+                    <input type="button" class="btn btn-update btn-xs" class="pull-right" value="Edit" />
+                </div>
+                <!--<div class="checkbox pull-left">
+                    <label>
+								<input type="checkbox" value="">
+							</label>
+                </div>-->
+                <div class="pull-left">
+                    <button (click)="roomSelected($event)" class="btn btn-danger ">Select </button>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{room.roomName}}</h4>
+                    <p>{{room.long}},{{room.lat}} </p>
+                    <p>{{room.createdAt|date:'medium'}} </p>
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </a>
+    </div>
+</div>

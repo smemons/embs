@@ -1,3 +1,6 @@
+import { BreadcrumbService } from './services/breadcrumb.service';
+import { IncidentService } from './services/incidentService';
+import { RoomService } from './services/room.service';
 import { NewRoomComponent } from './room/new-room/new-room.component';
 import { AuthGuard } from './authguard';
 import { AuthService } from './services/auth.service';
@@ -23,7 +26,7 @@ import { ChartModule, GMapModule, GalleriaModule, PanelModule, FieldsetModule, G
 
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { IncidentsComponent } from './incidents/incidents.component';
+
 import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -32,6 +35,10 @@ import { ChartsComponent } from './charts/charts.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './alert/alert.component';
 import { ListUsersComponent } from './list-users/list-users.component';
+import { ListRoomComponent } from './room/listRoom/listRoom.component';
+import { CreateIncComponent } from './incidents/createInc/createInc.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { ListincidentsComponent } from './incidents/listincidents/listincidents.component';
 
 
 @NgModule({
@@ -41,8 +48,7 @@ import { ListUsersComponent } from './list-users/list-users.component';
     NavbarComponent,
     HomeComponent,
     PageNotFoundComponent,
-    IncidentsComponent,
-    IncidentsComponent,
+
     LoginComponent,
     MapComponent,
     DashboardComponent,
@@ -51,9 +57,12 @@ import { ListUsersComponent } from './list-users/list-users.component';
     RegisterComponent,
     AlertComponent,
     ListUsersComponent,
-    NewRoomComponent
-
-  ],
+    NewRoomComponent,
+    ListRoomComponent,
+    CreateIncComponent,
+    BreadcrumbComponent,
+    ListincidentsComponent
+],
   imports: [
     BrowserModule,
     FormsModule,
@@ -72,7 +81,10 @@ import { ListUsersComponent } from './list-users/list-users.component';
     Userservice,
     AlertService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    RoomService,
+    IncidentService,
+    BreadcrumbService
 
 
   ],

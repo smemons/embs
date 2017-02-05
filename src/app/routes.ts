@@ -1,3 +1,6 @@
+import { ListincidentsComponent } from './incidents/listincidents/listincidents.component';
+import { CreateIncComponent } from './incidents/createInc/createInc.component';
+import { ListRoomComponent } from './room/listRoom/listRoom.component';
 import { NewRoomComponent } from './room/new-room/new-room.component';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { AuthGuard } from './authguard';
@@ -9,7 +12,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MapComponent } from './map/map.component';
 import { LoginComponent } from './login/login.component';
-import { IncidentsComponent } from './incidents/incidents.component';
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 
@@ -28,13 +31,7 @@ export const ROUTES = [
     path: 'map',
     component: MapComponent
   },
-  {
-    path: 'incidents',
-    component: IncidentsComponent,
-    canActivate: [AuthGuard]
 
-
-  },
   {
     path: 'dashboard',
     component: DashboardComponent,
@@ -63,8 +60,31 @@ export const ROUTES = [
   ,
 
   {
+    path: 'listRooms',
+    component: ListRoomComponent
+
+
+  }
+  ,
+
+  {
     path: 'newRoom',
     component: NewRoomComponent
+
+
+  },
+{
+    path: 'newIncident',
+    component: CreateIncComponent
+
+
+
+  }
+  ,
+{
+    path: 'listIncident',
+    component: ListincidentsComponent
+
 
 
   }

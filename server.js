@@ -5,8 +5,11 @@ const http = require('http');
 const bodyParser = require('body-parser');
 
 // Get our API routes
-const api = require('./server/routes/api');
+const userapi = require('./server/routes/userapi');
 
+const roomapi = require('./server/routes/roomapi');
+
+const incidentapi = require('./server/routes/incidentapi');
 
 
 
@@ -21,7 +24,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes
-app.use('/api/user', api);
+app.use('/api/user', userapi);
+app.use('/api/room', roomapi);
+app.use('/api/incident', incidentapi);
 
 
 
