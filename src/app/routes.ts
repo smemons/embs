@@ -1,3 +1,4 @@
+import { ChatComponent } from './chat/chat.component';
 import { ListincidentsComponent } from './incidents/listincidents/listincidents.component';
 import { CreateIncComponent } from './incidents/createInc/createInc.component';
 import { ListRoomComponent } from './room/listRoom/listRoom.component';
@@ -34,8 +35,8 @@ export const ROUTES = [
 
   {
     path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard]
+    component: DashboardComponent
+    // canActivate: [AuthGuard]
 
 
   },
@@ -72,7 +73,16 @@ export const ROUTES = [
     component: NewRoomComponent
 
 
-  },
+  }
+  ,
+
+  {
+    path: 'chat',
+    component: ChatComponent
+
+
+  }
+  ,
 {
     path: 'newIncident',
     component: CreateIncComponent

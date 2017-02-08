@@ -1,3 +1,4 @@
+import { ChatService } from './services/chat.service';
 import { BreadcrumbService } from './services/breadcrumb.service';
 import { IncidentService } from './services/incidentService';
 import { RoomService } from './services/room.service';
@@ -39,6 +40,7 @@ import { ListRoomComponent } from './room/listRoom/listRoom.component';
 import { CreateIncComponent } from './incidents/createInc/createInc.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ListincidentsComponent } from './incidents/listincidents/listincidents.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
@@ -61,7 +63,8 @@ import { ListincidentsComponent } from './incidents/listincidents/listincidents.
     ListRoomComponent,
     CreateIncComponent,
     BreadcrumbComponent,
-    ListincidentsComponent
+    ListincidentsComponent,
+    ChatComponent
 ],
   imports: [
     BrowserModule,
@@ -85,7 +88,8 @@ import { ListincidentsComponent } from './incidents/listincidents/listincidents.
     AuthGuard,
     RoomService,
     IncidentService,
-    BreadcrumbService
+    BreadcrumbService,
+    ChatService
 
 
   ],

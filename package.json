@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^2.3.1",
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
+    "@types/socket.io-client": "^1.4.29",
     "body-parser": "^1.16.0",
     "bootstrap": "^3.3.7",
     "chart.js": "^2.4.0",
@@ -30,6 +31,7 @@
     "mongoose": "^4.7.8",
     "primeng": "^2.0.0-rc.1",
     "rxjs": "^5.0.1",
+    "socket.io": "^1.7.2",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.7.2"
   },

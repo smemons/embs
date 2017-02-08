@@ -1,67 +1,77 @@
+<br />
 <div class="row">
-    <div class="col-lg-4 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">Incident Detail</div>
-            <div class="panel-body">
+    <div class="col-lg-12 col-md-8 col-md-4">
+        <p-panel [toggleable]="true" collapsed="true">
+            <p-header>
+                <div class="ui-helper-clearfix">
+                    <span class="ui-panel-title" style="font-size:16px;font-weight: bold; display:inline-block;">Some incident detail will go..</span>
 
-                <h4>Hello, world!</h4>
+                </div>
+            </p-header>
+            <div class="jumbotron">
+                <h4>Incident detail message will go here</h4>
                 <p>some text description is going on here</p>
                 <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-
             </div>
-        </div>
-
-
-    </div>
-    <div class="col-lg-4 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">Location</div>
-            <div class="panel-body">
-
-                <h4>Hello, world!</h4>
-                <p>some text description is going on here</p>
-                <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-
-            </div>
-        </div>
-
-
-    </div>
-    <div class="col-lg-4 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">Chat </div>
-            <div class="panel-body">
-
-                <h4>Hello, world!</h4>
-                <p>some text description is going on here</p>
-                <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-
-            </div>
-        </div>
-
-
+        </p-panel>
     </div>
 </div>
+<br />
 <div class="row">
     <div class="col-lg-12 col-md-8">
         <app-emcarousel></app-emcarousel>
     </div>
 </div>
-
-
 <div class="row">
-    <div class="col-lg-6">
-        <p-panel header="Title">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    <div class="col-lg-4 col-md-4">
+        <p-panel header="Casualities" [toggleable]="true">
+            <div class="em-sm-panel">
+                <h4>Hello, world!</h4>
+                <p>some text description is going on here</p>
+                <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+            </div>
         </p-panel>
     </div>
-    <div class="col-lg-6">
-        <p-panel header="Title">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    <div class="col-lg-4 col-md-4">
+        <p-panel header="Location" [toggleable]="true">
+            <div class="em-sm-panel">
+                <app-map></app-map>
+            </div>
+        </p-panel>
+    </div>
+    <div class=" col-lg-4 col-md-4 ">
+
+        <p-panel header="Chat " [toggleable]="true">
+            <div class="em-sm-panel">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5 em-chat-win"></div>
+                        <div class="col-sm-3 em-chat-cont"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7"></div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                </div>
+            </div>
         </p-panel>
     </div>
 </div>
+
+<!--<div class="row">
+    <div class="col-lg-6">
+        <p-panel header="Title">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p-panel>
+    </div>
+    <div class="col-lg-6">
+        <p-panel header="Title">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p-panel>
+    </div>
+</div>-->
