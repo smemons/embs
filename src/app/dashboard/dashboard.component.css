@@ -14,19 +14,3 @@
     height: 320px;
     width: 100%;
 }
-
-.em-chat-win {
-    border-radius: 10px;
-    border: 2px solid #999;
-    padding: 20px;
-    width: 200px;
-    height: 150px;
-}
-
-.em-chat-cont {
-    border-radius: 10px;
-    border: 2px solid #999;
-    padding: 20px;
-    width: 50px;
-    height: 150px;
-}
