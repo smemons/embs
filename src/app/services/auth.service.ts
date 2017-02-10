@@ -13,24 +13,24 @@ export class AuthService {
 
   public token: string;
   constructor(private http: Http, private alertService: AlertService, private router: Router) {
-    var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
     this.token = currentUser && currentUser.token;
 
   }
 
   authenticate(usr: User) {
 
-    //return this.http.post('/api/user', JSON.stringify(user), this.options);
+
     return this
       .http
       .post('/api/user/authenticate', usr, this.jwt())
       .map((response: Response) => {
-        debugger;
+
         console.log(response.json());
         var obj = response.json();
         if (obj.success) {
           this.isUserLoggedin = true;
-          localStorage.setItem('currentUser', JSON.stringify({ 'username': usr.username }));
+          sessionStorage.setItem('currentUser', JSON.stringify({ 'username': usr.username }));
           this.alertService.success(obj.message);
           return true;
         }
@@ -41,11 +41,7 @@ export class AuthService {
         }
       }
 
-      // let token = response.json() && response
-      //   .json()
-      //   .token;
-      // if (token) {
-      //   this.token = token;
+
 
 
 
@@ -57,6 +53,7 @@ export class AuthService {
   //logout
   logout() {
     this.isUserLoggedin = false;
+    sessionStorage.removeItem("currentUser");
     this.alertService.success('User logged out successfully!');
     this.router.navigate(['/']);
   }
@@ -67,7 +64,7 @@ export class AuthService {
   //get current User
   getCurrentUser(): string {
     if (this.isUserLoggedin)
-      return JSON.parse(localStorage.getItem('currentUser')).username;
+      return JSON.parse(sessionStorage.getItem('currentUser')).username;
     return "";
   }
 

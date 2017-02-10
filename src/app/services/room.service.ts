@@ -1,6 +1,6 @@
 
 import { Room } from './../models/room';
-import { Http, Response } from '@angular/http';
+import { Http, Response,URLSearchParams} from '@angular/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -25,4 +25,22 @@ create(room:Room)
       .get('/api/room/all')
       .map((response: Response) => response.json());
   }
-}
+
+  //get room by roomName
+  getRoomByName(roomName:string):Room
+  {
+    debugger;
+    let params: URLSearchParams = new URLSearchParams();
+ params.set('roomName', roomName);
+   return this
+      .http
+      .get('/api/room/byName',{search:params})
+      .map((response: Response) => response.json());
+
+
+
+
+
+  }
+  }
+

@@ -41,6 +41,7 @@ import { CreateIncComponent } from './incidents/createInc/createInc.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ListincidentsComponent } from './incidents/listincidents/listincidents.component';
 import { ChatComponent } from './chat/chat.component';
+import { CasualityComponent } from './casuality/casuality.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { ChatComponent } from './chat/chat.component';
     CreateIncComponent,
     BreadcrumbComponent,
     ListincidentsComponent,
-    ChatComponent
+    ChatComponent,
+    CasualityComponent
 ],
   imports: [
     BrowserModule,

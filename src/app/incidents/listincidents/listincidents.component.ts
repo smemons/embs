@@ -1,3 +1,6 @@
+import { RoomService } from './../../services/room.service';
+import { AlertService } from '../../services/alert.service';
+import { Room } from './../../models/room';
 import { BreadcrumbService } from './../../services/breadcrumb.service';
 import { IncidentService } from './../../services/incidentService';
 import { Incident } from './../../models/incident';
@@ -9,9 +12,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listincidents.component.css']
 })
 export class ListincidentsComponent implements OnInit {
-
+room:Room;
+incident:Incident;
  incs:Incident[];
-  constructor(private incService: IncidentService,private breadcrumbService:BreadcrumbService) { }
+  constructor(private incService: IncidentService,
+  private breadcrumbService:BreadcrumbService,
+  private alertService:AlertService,private roomService:RoomService) { }
 
   ngOnInit() {
     this.getAllInc().subscribe({
@@ -27,7 +33,20 @@ export class ListincidentsComponent implements OnInit {
 
     return this.incService.getAll();
   }
-  incSelected(event){
+  incSelected(incd:Incident){
+   debugger;
+
+   try {
+      this.room=this.roomService.getRoomByName(incd.roomName);
+   } catch (error) {
+
+     this.alertService.error(error);
+
+   }
+   sessionStorage.setItem('room',JSON.stringify(this.room));
+    this.breadcrumbService.setBCMessage(this.room.areaName,this.room.roomName,incd.title);
+    this.alertService.success('Incident selected');
+    sessionStorage.setItem('incident',JSON.stringify(incd));
 
   }
 }

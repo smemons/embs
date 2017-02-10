@@ -12,6 +12,7 @@ export class BreadcrumbComponent implements OnInit {
    display: boolean = false;
   loading = false;
   isRoomSelect:boolean=false;
+  isIncidentSelected:boolean=false;
   bcmsg:BCMsg;
   constructor(private breadcrumbService:BreadcrumbService) {
 
@@ -21,6 +22,17 @@ export class BreadcrumbComponent implements OnInit {
      this.breadcrumbService.getMessage().subscribe(message => {
        this.isRoomSelect=true;
        this.bcmsg=message;
+
+       //see if incident is selected as well
+       if(!this.bcmsg.incTitle)
+       {
+         this.isIncidentSelected=false;
+       }
+       else
+       {
+         this.isRoomSelect=true;
+         this.isIncidentSelected=true;
+       }
 
       });
   }

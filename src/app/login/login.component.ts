@@ -44,6 +44,9 @@ export class LoginComponent implements OnInit {
         data => {
 
           if (data) {
+            //user has logged in successfully - set him into session storage for now
+
+
             this.router.navigate([this.authService.redirectUrl]);
           }
           else {

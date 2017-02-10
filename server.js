@@ -19,15 +19,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(express.static(__dirname, '/'));
 app.use(express.static(path.join(__dirname, 'dist')));
 //app.use(express.static(__dirname + '/node_modules'));
+// // Set our api routes
+app.use('/api/user', userapi);
+app.use('/api/room', roomapi);
+app.use('/api/incident', incidentapi);
 
 app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-// // Set our api routes
-app.use('/api/user', userapi);
-app.use('/api/room', roomapi);
-app.use('/api/incident', incidentapi);
+
 
 // /**
 //  * Get port from environment and store in Express.

@@ -37,43 +37,28 @@
         <div class="tr" style="height: 80%;">
             <div class="td">
                 <ul>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
-                    <li>testing</li>
+                    <li *ngFor="let message of messages">{{message}}</li>
+
                 </ul>
             </div>
-            <div class="td">Lorem ipsum </div>
+            <div class="td">
+
+                <ul>
+                    <li *ngFor="let user of users">{{user}}</li>
+
+                </ul>
+
+            </div>
         </div>
         <div class="tr" style="height: 20%;">
             <div class="td" style="width: 100%; border: none;">
 
 
-                <textarea rows="3" class="form-control" placeholder="Broadcast Message" style="width: 100%;height: 100%;resize: none; "></textarea>
+                <textarea [(ngModel)]="message" rows="3" class="form-control" placeholder="Broadcast Message" style="width: 100%;height: 100%;resize: none; "></textarea>
 
             </div>
-            <div class="td" style="padding-top: 10px;"> <input class="btn btn-info" type="button" class="pull-right" value="Search" class="button" />
+            <div class="td" style="padding-top: 1px;">
+                <button class=" pull-right" (click)="sendMessage()">Send</button>
             </div>
         </div>
     </div>

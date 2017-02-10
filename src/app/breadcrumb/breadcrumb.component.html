@@ -1,10 +1,10 @@
 <!--<div class="container">-->
-<div class="fixed-height">
-    <ul *ngIf="isRoomSelect" class="breadcrumb">
-        <li class="completed"><a href="javascript:void(0);">{{bcmsg.areaName}}</a></li>
-        <li class="active"><a href="javascript:void(0);">{{bcmsg.roomName}}</a></li>
-        <li><a href="javascript:void(0);">{{bcmsg.incTitle}}</a></li>
-        <li>
+<div class="fixed-height hidden-xs">
+    <ul class="breadcrumb">
+        <li *ngIf="isRoomSelect" class="completed"><a href="javascript:void(0);">{{bcmsg.areaName}}</a></li>
+        <li *ngIf="isRoomSelect" class="completed"><a href="javascript:void(0);">{{bcmsg.roomName}}</a></li>
+        <li *ngIf="isIncidentSelected" class="active">><a href="javascript:void(0);">{{bcmsg.incTitle}}</a></li>
+        <li *ngIf="isIncidentSelected">
 
             <div><button (click)="showDialog()" class="btn btn-danger btn-sm">Post Message</button></div>
 

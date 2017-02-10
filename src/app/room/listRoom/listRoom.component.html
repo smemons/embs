@@ -14,12 +14,13 @@
 								<input type="checkbox" value="">
 							</label>
                 </div>-->
-                <div class="pull-left">
-                    <button (click)="roomSelected($event)" class="btn btn-danger ">Select </button>
-                </div>
+                <!--<div class="pull-left">
+                    <button (click)="roomSelected(room)" class="btn btn-danger ">Select </button>
+                </div>-->
                 <div class="media-body">
                     <h4 class="media-heading">{{room.roomName}}</h4>
                     <p>{{room.long}},{{room.lat}} </p>
+                    <p>{{room.areaName}} </p>
                     <p>{{room.createdAt|date:'medium'}} </p>
                 </div>
 
