@@ -16,9 +16,9 @@ const incidentapi = require('./server/routes/incidentapi');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//app.use(express.static(__dirname, '/'));
+
 app.use(express.static(path.join(__dirname, 'dist')));
-//app.use(express.static(__dirname + '/node_modules'));
+
 // // Set our api routes
 app.use('/api/user', userapi);
 app.use('/api/room', roomapi);
@@ -39,13 +39,23 @@ app.set('port', port);
 io.on('connection', function(socket) {
     console.log('instantiating socket' + socket.handshake.query.userName);
     if (socket.handshake.query.userName != null) {
-        io.emit('em-message', 'User connected: ' + socket.handshake.query.userName);
         clientListNames.push(socket.handshake.query.userName);
+        io.emit('userOnline', socket.handshake.query.userName);
+        io.emit("updateOnlineList", clientListNames);
+
+        console.log(clientListNames);
+
     }
 
 
     socket.on('disconnect', function() {
-        console.log('i am disconnectd');
+        let name = socket.handshake.query.userName;
+        let userIndex = clientListNames.indexOf(name);
+        if (userIndex != -1) {
+            clientListNames.splice(userIndex, 1);
+            io.emit("updateOnlineList", clientListNames);
+            io.emit("userOffline", name);
+        }
     });
 
 

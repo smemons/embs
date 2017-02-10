@@ -35,8 +35,8 @@ export const ROUTES = [
 
   {
     path: 'dashboard',
-    component: DashboardComponent
-    // canActivate: [AuthGuard]
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
 
 
   },

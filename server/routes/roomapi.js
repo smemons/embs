@@ -10,7 +10,7 @@ rooms.get('/', uf.getRoom);
 rooms.post('/', uf.saveRoom);
 // users.post('/authenticate',uf.authenticate);
 rooms.get('/all', uf.getAll);
-rooms.get('/byName', uf.getRoomByName);
+rooms.get('/byName/:roomName', uf.getRoomByName);
 // users.patch('/:id', function(req, res) { });
 // users.delete('/:id', function(req, res) { });
 

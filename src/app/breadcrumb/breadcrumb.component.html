@@ -1,10 +1,10 @@
 <!--<div class="container">-->
-<div class="fixed-height hidden-xs">
-    <ul class="breadcrumb">
-        <li *ngIf="isRoomSelect" class="completed"><a href="javascript:void(0);">{{bcmsg.areaName}}</a></li>
-        <li *ngIf="isRoomSelect" class="completed"><a href="javascript:void(0);">{{bcmsg.roomName}}</a></li>
-        <li *ngIf="isIncidentSelected" class="active">><a href="javascript:void(0);">{{bcmsg.incTitle}}</a></li>
-        <li *ngIf="isIncidentSelected">
+<div class="fixed-height">
+    <ul *ngIf="isRoomSelect" class="breadcrumb">
+        <li class="completed"><a href="javascript:void(0);">{{bcmsg.areaName}}</a></li>
+        <li class="active"><a href="javascript:void(0);">{{bcmsg.roomName}}</a></li>
+        <li><a href="javascript:void(0);">{{bcmsg.incTitle}}</a></li>
+        <li>
 
             <div><button (click)="showDialog()" class="btn btn-danger btn-sm">Post Message</button></div>
 
@@ -29,13 +29,7 @@
                 <div *ngIf="f.submitted && !desc.valid" class="help-block">Post Description is required</div>
             </div>
 
-            <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !roomName.valid }">
-                    <label for="roomName">Room Name</label>
-                    <select class="form-control" id="room" name="roomName" [(ngModel)]="model.roomName" #roomName="ngModel" required>
-              <option *ngFor="let room of rooms" [ngValue]="room.roomName">{{room.roomName}}</option>
-            </select>
 
-                </div>-->
 
             <div class="form-group">
                 <button [disabled]="loading" class="btn btn-primary">Post</button>

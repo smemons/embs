@@ -68,7 +68,7 @@
 }
 
 ul {
-    overflow-y: scroll;
+    overflow-y: auto;
     width: 100%;
     height: 100%;
     position: relative;
@@ -94,4 +94,16 @@ li:nth-child(even) {
     left: 60px;
     right: 100px;
     top: 8px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #eaecef;
+    border-radius: 5px;
+    ;
+}
+
+th {
+    background-color: #eaecef;
 }

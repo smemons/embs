@@ -67,7 +67,6 @@ export class Userservice {
       .http
       .post('/api/user/authenticate', user, this.jwt())
       .map((response: Response) => {
-        debugger;
         let token = response.json() && response
           .json()
           .token;
