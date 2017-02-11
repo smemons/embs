@@ -48,9 +48,9 @@ export class ListincidentsComponent implements OnInit {
 
     return this.incService.getAll();
   }
+
+
   incSelected(incd: Incident) {
-
-
 
    this.roomService.getRoomByName(incd.roomName).subscribe({
 

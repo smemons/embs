@@ -77,7 +77,7 @@ export class AuthService {
     //get current incident
   getCurrentIncident(): string {
     if (this.isUserLoggedin)
-      return JSON.parse(sessionStorage.getItem('incident')).title;;
+      return JSON.parse(sessionStorage.getItem('incident')).title;
     return "";
   }
 

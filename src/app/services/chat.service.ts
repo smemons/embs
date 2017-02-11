@@ -51,6 +51,26 @@ export class ChatService {
     })
     return observable;
   }
+
+//send a message to server that a new post is published, so that it can broadcast it
+ postPublish(post) {
+   debugger;
+     if (this.socket == null) this.socket = io();
+    this.socket.emit('postPublished', post);
+  }
+  //Post is published  now
+  postPublished() {
+    let observable = new Observable(observer => {
+      if (this.socket == null) this.socket = io();
+      this.socket.on('postPublished', (data) => {
+        observer.next(data);
+      });
+      return () => {
+        this.socket.disconnect();
+      };
+    })
+    return observable;
+  }
   /////////////////////////
   //when message arrive
   getMessages() {

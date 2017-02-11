@@ -1,3 +1,5 @@
+
+import { ChatService } from './chat.service';
 import { AuthService } from './auth.service';
 import {
   Observable
@@ -19,10 +21,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PostService {
 
-  constructor(private http: Http,private authService:AuthService) {}
+  constructor(private http: Http,private authService:AuthService,private chatService:ChatService) {}
 
   create( post:Post) {
-    debugger;
+
     console.log('posting Post from service: ' + post);
     let currentUser:string="";
     let currentIncident:string="";
@@ -40,6 +42,9 @@ export class PostService {
     post.createdBy=currentUser;
     post.incidentName=currentIncident;
 
+    //just broadcast a new post Message
+    this.chatService.postPublish(post);
+
     return this
       .http
       .post('/api/post', post)
@@ -54,16 +59,12 @@ export class PostService {
       .map((response: Response) => response.json());
   }
 
-  // //get room by roomName
-  // getRoomByName(roomName: string) {
-  //   debugger;
+  //get latest posts
+  getLatestPost(incName: string) {
+    return this.http
+      .get('/api/post/latest/'+incName)
+      .map((res: Response) => res.json());
 
-
-  //   return this.http
-
-  //     .get('/api/room/byName/'+roomName)
-  //     .map((res: Response) => res.json());
-
-  // }
+  }
 
 }

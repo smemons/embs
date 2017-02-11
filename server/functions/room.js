@@ -34,9 +34,9 @@ var getAll = function(req, res, next) {
     });
 }
 var getRoomByName = function(req, res, next) {
-    console.log('getting a room' + JSON.stringify(req.body));
+   // console.log('getting a room' + JSON.stringify(req.body));
     var roomn = req.params.roomName;
-    console.log('Looking by roomName: ' + roomn);
+    //console.log('Looking by roomName: ' + roomn);
     Room.findOne({ "roomName": roomn }, function(err, rooms) {
         if (err) {
 

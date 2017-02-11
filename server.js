@@ -66,6 +66,11 @@ io.on('connection', function(socket) {
         console.log('got message from client' + msg);
         io.emit('em-message', msg);
     });
+
+    socket.on('postPublished', function(msg) {
+        console.log('got Post from client' + msg);
+        io.emit('postPublished', msg);
+    });
 });
 
 http.listen(port, function() {

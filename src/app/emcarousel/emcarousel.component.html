@@ -1,27 +1,28 @@
 <p-growl [value]="msgs">
 </p-growl>
 
-<p-carousel circular="circular" autoplayInterval="5000" headerText="Cars" [value]="cars">
-    <template let-car pTemplate="item">
+<p-carousel circular="circular" autoplayInterval="6000" headerText="Posts" [value]="posts">
+    <template let-post pTemplate="item">
         <div class="ui-grid ui-grid-responsive">
             <!--<div class="ui-grid-row">
                 <div class="ui-grid-col-12"><img src="showcase/resources/demo/images/car/{{car.brand}}.gif" /></div>
             </div>-->
             <div class="ui-grid-row">
-                <div class="ui-grid-col-6">Vin</div>
-                <div class="ui-grid-col-6">{{car.vin}}</div>
+                <div class="ui-grid-col-3">Title</div>
+                <div class="ui-grid-col-6"><h4>{{post.title}}</h4></div>
             </div>
             <div class="ui-grid-row">
-                <div class="ui-grid-col-6">Year</div>
-                <div class="ui-grid-col-6">{{car.year}}</div>
+                <div class="ui-grid-col-3">Description</div>
+                <div class="ui-grid-col-6">{{post.desc}}</div>
             </div>
             <div class="ui-grid-row">
-                <div class="ui-grid-col-6">Color</div>
-                <div class="ui-grid-col-6">{{car.color}}</div>
+                <div class="ui-grid-col-3">Posted By</div>
+                <div class="ui-grid-col-3">{{post.createdBy}}</div>
+                 <div class="ui-grid-col-3">{{post.createdAt|date:'short'}}</div>
             </div>
             <div class="ui-grid-row">
                 <div class="ui-grid-col-12">
-                    <button type="button" pButton icon="fa-search" (click)="selectCar(car)"></button>
+                    <button type="button"  (click)="selectCar(post)">Detail</button>
                 </div>
             </div>
         </div>

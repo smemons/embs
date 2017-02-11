@@ -1,3 +1,7 @@
+import { PostService } from './../services/postService';
+import { Post } from '../models/post';
+import { AlertService } from '../services/alert.service';
+import { ChatService } from './../services/chat.service';
 import {
   Message
 } from './../common/api';
@@ -16,12 +20,13 @@ import {
 })
 export class EmcarouselComponent implements OnInit {
 
+  posts: Post[];
 
   cars: Car[];
 
   msgs: Message[];
 
-  constructor() {
+  constructor(private chatService:ChatService,private alertService:AlertService,private postService:PostService) {
     this.msgs = [];
     this.cars = [{
         vin: 'r3278r2',
@@ -89,6 +94,21 @@ export class EmcarouselComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+     let inc=JSON.parse(sessionStorage.getItem('incident')).title;
+     this.postService.getLatestPost(inc).subscribe({
+      next: posts => {
+
+       this.posts=posts;
+       console.log(' posts'+this.posts);
+      }
+    });
+
+      //add update user list functionality
+      this.chatService.postPublished().subscribe(post => {
+        this.alertService.info("Post published"+post);
+      });
+  }
 
 }

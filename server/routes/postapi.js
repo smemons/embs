@@ -10,9 +10,10 @@ posts.get('/', uf.getPost);
 posts.post('/', uf.savePost);
 // users.post('/authenticate',uf.authenticate);
 posts.get('/all', uf.getAll);
-//posts.get('/byName/:roomName', uf.getRoomByName);
-// users.patch('/:id', function(req, res) { });
-// users.delete('/:id', function(req, res) { });
+posts.get('/latest/:incName', uf.getLatest)
+    //posts.get('/byName/:roomName', uf.getRoomByName);
+    // users.patch('/:id', function(req, res) { });
+    // users.delete('/:id', function(req, res) { });
 
 
 
