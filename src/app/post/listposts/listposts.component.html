@@ -1,0 +1,26 @@
+<div class="jumbotron">
+    <h3>Incident Posts</h3>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+        <ul class="event-list">
+            <li *ngFor="let post of posts">
+                <time datetime="2014-07-20">
+                {{post.createdAt|date :'short'}}
+                <span class="day"> {{post.createdAt|date :'d'}}</span>
+                <span class="month">{{post.createdAt|date :'MMM'}}</span>
+                <span class="year">{{post.createdAt|date :'y'}}</span>
+                <span class="time">{{post.createdAt|date :'shortTime'}}</span>
+                </time>
+                <div class="info">
+                    <h2 class="title">{{post.title}}</h2>
+                    <p class="desc">{{post.desc}}</p>
+
+                    <p class="desc"><span style="font-style: italic">Created by: </span>{{post.createdBy}}</p>
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+</div>

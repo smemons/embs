@@ -1,3 +1,4 @@
+import { ListpostsComponent } from './post/listposts/listposts.component';
 import { PostService } from './services/postService';
 import { ChatService } from './services/chat.service';
 import { BreadcrumbService } from './services/breadcrumb.service';
@@ -67,7 +68,8 @@ import { CasualityComponent } from './casuality/casuality.component';
     BreadcrumbComponent,
     ListincidentsComponent,
     ChatComponent,
-    CasualityComponent
+    CasualityComponent,
+    ListpostsComponent
 ],
   imports: [
     BrowserModule,

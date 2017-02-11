@@ -23,7 +23,7 @@ export class ListRoomComponent implements OnInit {
         console.log("Got rooms: ", rooms);
         this.rooms=rooms;
       }
-    });;
+    });
   }
   getAllRooms() {
 

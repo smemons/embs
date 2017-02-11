@@ -46,13 +46,13 @@ export class PostService {
       .map((response: Response) => response.json());
   }
 
-  // //get all RoomService
-  // getAll() {
-  //   return this
-  //     .http
-  //     .get('/api/room/all')
-  //     .map((response: Response) => response.json());
-  // }
+  // //get all Posts
+  getAll() {
+    return this
+      .http
+      .get('/api/post/all')
+      .map((response: Response) => response.json());
+  }
 
   // //get room by roomName
   // getRoomByName(roomName: string) {
