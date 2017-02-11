@@ -67,6 +67,19 @@ export class AuthService {
       return JSON.parse(sessionStorage.getItem('currentUser')).username;
     return "";
   }
+   //get current room
+  getCurrentRoom(): string {
+    if (this.isUserLoggedin)
+      return JSON.parse(sessionStorage.getItem('room')).roomName;
+    return "";
+  }
+
+    //get current incident
+  getCurrentIncident(): string {
+    if (this.isUserLoggedin)
+      return JSON.parse(sessionStorage.getItem('incident')).title;;
+    return "";
+  }
 
   // private helper methods
 

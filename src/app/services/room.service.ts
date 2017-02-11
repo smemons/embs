@@ -39,7 +39,6 @@ export class RoomService {
 
   //get room by roomName
   getRoomByName(roomName: string) {
-    debugger;
 
 
     return this.http

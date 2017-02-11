@@ -1,3 +1,4 @@
+import { PostService } from './services/postService';
 import { ChatService } from './services/chat.service';
 import { BreadcrumbService } from './services/breadcrumb.service';
 import { IncidentService } from './services/incidentService';
@@ -91,7 +92,8 @@ import { CasualityComponent } from './casuality/casuality.component';
     RoomService,
     IncidentService,
     BreadcrumbService,
-    ChatService
+    ChatService,
+    PostService
 
 
   ],

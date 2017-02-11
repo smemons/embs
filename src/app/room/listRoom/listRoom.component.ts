@@ -35,7 +35,7 @@ export class ListRoomComponent implements OnInit {
     event.preventDefault();
     sessionStorage.setItem("room",JSON.stringify(room));
     this.alertService.success('Room selected');
-    this.breadcrumbService.setBCMessage(room.areaName,room.roomName,"");
+    this.breadcrumbService.setBCMessage(room.areaName,room.roomName,"Test Incident");
   }
 
 }

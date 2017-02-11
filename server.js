@@ -12,6 +12,8 @@ const roomapi = require('./server/routes/roomapi');
 
 const incidentapi = require('./server/routes/incidentapi');
 
+const postapi = require('./server/routes/postapi');
+
 // // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/api/user', userapi);
 app.use('/api/room', roomapi);
 app.use('/api/incident', incidentapi);
+app.use('/api/post', postapi);
 
 app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, 'dist/index.html'));

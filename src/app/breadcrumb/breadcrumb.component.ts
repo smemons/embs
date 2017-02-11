@@ -1,3 +1,5 @@
+import { AlertService } from './../services/alert.service';
+import { PostService } from './../services/postService';
 import { BreadcrumbService } from './../services/breadcrumb.service';
 import { BCMsg } from './../models/BCMsg';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +16,7 @@ export class BreadcrumbComponent implements OnInit {
   isRoomSelect:boolean=false;
   isIncidentSelected:boolean=false;
   bcmsg:BCMsg;
-  constructor(private breadcrumbService:BreadcrumbService) {
+  constructor(private breadcrumbService:BreadcrumbService,private postService:PostService,private alertService:AlertService) {
 
    }
 
@@ -42,7 +44,30 @@ export class BreadcrumbComponent implements OnInit {
         this.display = true;
     }
 
-    hideDialog() {
+    savePostHideDialog() {
+      this.loading=true;
+      debugger;
+       event.preventDefault();
+      console.log(this.model);
+      this.postService.create(this.model).subscribe(
+                data => {
+                   console.log('Post created - Service!');
+                    this.alertService.success("Post published!");
+
+                },
+                error => {
+
+                    console.log(error);
+                    this.alertService.error(error._body);
+                    this.loading = false;
+                });
+
+      this.display = false;
+      this.loading=false;
+
+    }
+    hideDialog()
+    {
         this.display = false;
     }
 

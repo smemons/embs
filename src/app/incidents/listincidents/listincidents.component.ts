@@ -57,8 +57,6 @@ export class ListincidentsComponent implements OnInit {
       next: aroom => {
 
         console.log("Got rooms: ", aroom);
-
-
         sessionStorage.setItem('room', JSON.stringify(aroom));
         this.breadcrumbService.setBCMessage(aroom.areaName, aroom.roomName, incd.title);
         this.alertService.success('Incident selected');
