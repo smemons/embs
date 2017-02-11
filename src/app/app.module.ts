@@ -1,3 +1,4 @@
+import { EllipsesPipe } from './services/ellipses.pipe';
 import { ListpostsComponent } from './post/listposts/listposts.component';
 import { PostService } from './services/postService';
 import { ChatService } from './services/chat.service';
@@ -69,7 +70,8 @@ import { CasualityComponent } from './casuality/casuality.component';
     ListincidentsComponent,
     ChatComponent,
     CasualityComponent,
-    ListpostsComponent
+    ListpostsComponent,
+    EllipsesPipe
 ],
   imports: [
     BrowserModule,

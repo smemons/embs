@@ -3,17 +3,17 @@
 
 <p-carousel circular="circular" autoplayInterval="6000" headerText="Posts" [value]="posts">
     <template let-post pTemplate="item">
-        <div class="ui-grid ui-grid-responsive">
+        <div class="ui-grid ui-grid-responsive" style="padding: 4px;">
             <!--<div class="ui-grid-row">
                 <div class="ui-grid-col-12"><img src="showcase/resources/demo/images/car/{{car.brand}}.gif" /></div>
             </div>-->
             <div class="ui-grid-row">
                 <div class="ui-grid-col-3">Title</div>
-                <div class="ui-grid-col-6"><h4>{{post.title}}</h4></div>
+                <div class="ui-grid-col-6"><h4>{{post.title|ellipses:30}}</h4></div>
             </div>
             <div class="ui-grid-row">
                 <div class="ui-grid-col-3">Description</div>
-                <div class="ui-grid-col-6">{{post.desc}}</div>
+                <div class="ui-grid-col-6">{{post.desc|ellipses:30}}</div>
             </div>
             <div class="ui-grid-row">
                 <div class="ui-grid-col-3">Posted By</div>
@@ -22,7 +22,7 @@
             </div>
             <div class="ui-grid-row">
                 <div class="ui-grid-col-12">
-                    <button type="button"  (click)="selectCar(post)">Detail</button>
+                    <button type="button"  class="btn btn-danger" (click)="selectCar(post)">Detail</button>
                 </div>
             </div>
         </div>
