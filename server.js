@@ -42,8 +42,10 @@ app.set('port', port);
 io.on('connection', function(socket) {
     console.log('instantiating socket' + socket.handshake.query.userName);
     if (socket.handshake.query.userName != null) {
-        clientListNames.push(socket.handshake.query.userName);
-        io.emit('userOnline', socket.handshake.query.userName);
+        if (!clientListNames.includes(socket.handshake.query.userName)) {
+            clientListNames.push(socket.handshake.query.userName);
+            io.emit('userOnline', socket.handshake.query.userName);
+        }
         io.emit("updateOnlineList", clientListNames);
 
         console.log(clientListNames);

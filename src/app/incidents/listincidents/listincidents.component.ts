@@ -51,7 +51,7 @@ export class ListincidentsComponent implements OnInit {
 
 
   incSelected(incd: Incident) {
-   debugger;
+
    this.incidentService.getIncidentByName(incd.title).subscribe({
       next: incdt => {
         console.log("Got incident: ", incdt);
