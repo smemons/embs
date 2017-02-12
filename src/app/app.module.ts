@@ -1,3 +1,4 @@
+import { IncGuard } from './services/incguard';
 import { EllipsesPipe } from './services/ellipses.pipe';
 import { ListpostsComponent } from './post/listposts/listposts.component';
 import { PostService } from './services/postService';
@@ -97,7 +98,8 @@ import { CasualityComponent } from './casuality/casuality.component';
     IncidentService,
     BreadcrumbService,
     ChatService,
-    PostService
+    PostService,
+    IncGuard
 
 
   ],

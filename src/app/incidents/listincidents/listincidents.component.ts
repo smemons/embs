@@ -51,14 +51,14 @@ export class ListincidentsComponent implements OnInit {
 
 
   incSelected(incd: Incident) {
-
+   debugger;
    this.roomService.getRoomByName(incd.roomName).subscribe({
 
-      next: aroom => {
+      next: incdt => {
 
-        console.log("Got rooms: ", aroom);
-        sessionStorage.setItem('room', JSON.stringify(aroom));
-        this.breadcrumbService.setBCMessage(aroom.areaName, aroom.roomName, incd.title);
+        console.log("Got incident: ", incdt);
+        sessionStorage.setItem('room', JSON.stringify(incdt));
+        this.breadcrumbService.setBCMessage(incdt.areaName, incdt.roomName, incd.title);
         this.alertService.success('Incident selected');
         sessionStorage.setItem('incident', JSON.stringify(incd));
 

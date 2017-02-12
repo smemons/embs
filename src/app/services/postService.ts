@@ -32,7 +32,7 @@ export class PostService {
     if(this.authService.isUserLoggedin)
     {
       currentUser=this.authService.getCurrentUser();
-      currentIncident=this.authService.getCurrentIncident();
+      currentIncident=this.authService.getCurrentIncident().title;
 
     }
     else

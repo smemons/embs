@@ -8,11 +8,9 @@ const uf = require('../functions/incident');
 var incident = express.Router();
 incident.get('/', uf.getIncident);
 incident.post('/', uf.saveIncident);
-// users.post('/authenticate',uf.authenticate);
+incident.get('/byName/:incName', uf.getIncByName);
 incident.get('/all', uf.getAll);
-// users.get('/:id', function(req, res) { });
-// users.patch('/:id', function(req, res) { });
-// users.delete('/:id', function(req, res) { });
+
 
 
 

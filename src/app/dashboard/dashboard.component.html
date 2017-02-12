@@ -4,13 +4,16 @@
         <p-panel [toggleable]="true" collapsed="true">
             <p-header>
                 <div class="ui-helper-clearfix">
-                    <span class="ui-panel-title" style="font-size:16px;font-weight: bold; display:inline-block;">Some incident detail will go..</span>
+                    <span class="ui-panel-title" style="font-size:16px;font-weight: bold; display:inline-block;"><span style="text-decoration: underline;">Incident Detail:</span> {{incident.title}} </span>
+
 
                 </div>
             </p-header>
             <div class="jumbotron">
-                <h4>Incident detail message will go here</h4>
-                <p>some text description is going on here</p>
+                <h4>{{incident.title}}</h4>
+                <p>{{incident.desc}}</p>
+                <p>Room: {{incident.roomName}}</p>
+                <p>Created By: {{incident.createdBy}} {{incident.createdAt|date: 'medium'}}</p>
                 <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
             </div>
         </p-panel>

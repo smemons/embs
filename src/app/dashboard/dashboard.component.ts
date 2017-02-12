@@ -1,3 +1,6 @@
+import { AuthService } from '../services/auth.service';
+import { Incident } from './../models/incident';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+incident:Incident;
+  constructor(private router:Router,private authService:AuthService) { }
 
   ngOnInit() {
+   this.incident=this.authService.getCurrentIncident();
+
   }
 
 }

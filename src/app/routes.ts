@@ -1,3 +1,4 @@
+import { IncGuard } from './services/incguard';
 import {
   ListpostsComponent
 } from './post/listposts/listposts.component';
@@ -69,7 +70,7 @@ export const ROUTES = [{
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard,IncGuard]
 
 
   },

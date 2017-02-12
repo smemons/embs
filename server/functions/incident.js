@@ -34,9 +34,25 @@ var getAll = function(req, res, next) {
     });
 }
 
+var getIncByName = function(req, res, next) {
+    // console.log('getting a room' + JSON.stringify(req.body));
+    var inc = req.params.incName;
+    //console.log('Looking by roomName: ' + roomn);
+    Incident.findOne({ "title": inc }, function(err, rooms) {
+        if (err) {
+
+            next(err);
+        } else {
+
+            res.json(rooms);
+        }
+    });
+}
+
 module.exports = {
     getIncident: getIncident,
     saveIncident: saveIncident,
-    getAll: getAll
+    getAll: getAll,
+    getIncByName: getIncByName
 
 }

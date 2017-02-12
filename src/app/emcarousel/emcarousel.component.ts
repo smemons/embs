@@ -107,7 +107,7 @@ export class EmcarouselComponent implements OnInit {
 
       //add update user list functionality
       this.chatService.postPublished().subscribe(post => {
-        this.alertService.info("Post published"+post);
+        this.alertService.info("Post stored"+post);
       });
   }
 

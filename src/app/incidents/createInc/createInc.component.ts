@@ -55,7 +55,7 @@ rooms:Room[];
             .subscribe(
                 data => {
                    console.log('User created - Service!');
-                   this.alertService.success('Room created!');
+                   this.alertService.success('Incident created!');
                     this.router.navigate(['/home']);
                 },
                 error => {
