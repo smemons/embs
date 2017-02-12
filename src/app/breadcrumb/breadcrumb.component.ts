@@ -1,3 +1,5 @@
+import { Incident } from './../models/incident';
+import { AuthService } from '../services/auth.service';
 import { AlertService } from './../services/alert.service';
 import { PostService } from './../services/postService';
 import { BreadcrumbService } from './../services/breadcrumb.service';
@@ -16,7 +18,8 @@ export class BreadcrumbComponent implements OnInit {
   isRoomSelect:boolean=false;
   isIncidentSelected:boolean=false;
   bcmsg:BCMsg;
-  constructor(private breadcrumbService:BreadcrumbService,private postService:PostService,private alertService:AlertService) {
+  constructor(private breadcrumbService:BreadcrumbService,
+  private postService:PostService,private alertService:AlertService,private authServie:AuthService) {
 
    }
 
@@ -37,6 +40,18 @@ export class BreadcrumbComponent implements OnInit {
        }
 
       });
+
+     //if page reloads, read the localstorage and store incident detail in
+    //  if(this.authServie.isLoggedIn() && !this.bcmsg)
+    //  {
+    //    debugger;
+    //    let inc:Incident;
+    //    inc=this.authServie.getCurrentIncident();
+    //    this.bcmsg={areaName:"",roomName:inc.roomName,incTitle:inc.title};
+    //      this.isRoomSelect=true;
+    //      this.isIncidentSelected=true;
+    //  }
+
   }
 
 

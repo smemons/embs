@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { BreadcrumbService } from './../services/breadcrumb.service';
 import { AuthService } from './../services/auth.service';
 
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
 
-  constructor(public authService: AuthService) {
+  constructor( private authService: AuthService) {
 
   }
 
@@ -22,7 +23,6 @@ export class NavbarComponent implements OnInit {
     return this.authService.isUserLoggedin;
   }
   logout(event) {
-
     this.authService.logout();
   }
 
