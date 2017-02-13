@@ -1,3 +1,5 @@
+import { UIChart } from 'primeng/primeng';
+import { first } from 'rxjs/operator/first';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChartsComponent implements OnInit {
 
-  data: any;
+   data: any;
+   dataReal :any;
+   firstds:any;
+   secondds:any;
+   thirdds:any;
 
     constructor() {
+       this.firstds=[65,59,80,81,56,55,40];
+       this.secondds=[28, 48, 40, 19, 86, 27, 90];
+       this.thirdds=[];
         this.data = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
@@ -33,10 +42,49 @@ export class ChartsComponent implements OnInit {
                     data: [34, 45, 36, 19, 46, 23, 11]
                 }
             ]
+        };
+
+        this.dataReal = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','Sept','Oct','Nov','Dec'],
+            datasets: [
+                {
+                    label: 'First Dataset',
+                    data: this.firstds,
+                    fill: false,
+                    borderColor: '#4bc0c0'
+                },
+                {
+                    label: 'Second Dataset',
+                    data: this.secondds,
+                    fill: false,
+                    borderColor: '#565656'
+                },
+                {
+                    label: 'Third Dataset',
+                    data: this.thirdds,
+                    fill: false,
+                    borderColor: 'red'
+                }
+            ]
         }
     }
 
   ngOnInit() {
   }
+
+startReal(chart:UIChart){
+debugger;
+let _this=this;
+setInterval(function(){
+  debugger;
+   _this.thirdds.push(Math.floor((Math.random()*100)+1));
+      _this.firstds.push(Math.floor((Math.random()*100)+1));
+         _this.secondds.push(Math.floor((Math.random()*100)+1));
+
+ chart.refresh();
+ }, 4000);
+
+
+}
 
 }

@@ -1,3 +1,4 @@
+
 import { IncGuard } from './services/incguard';
 import { EllipsesPipe } from './services/ellipses.pipe';
 import { ListpostsComponent } from './post/listposts/listposts.component';
@@ -25,7 +26,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { DialogModule,ChartModule, GMapModule, GalleriaModule, PanelModule, FieldsetModule, GrowlModule, CarouselModule } from 'primeng/primeng';
+import { TabViewModule, DialogModule,ChartModule, GMapModule, GalleriaModule,
+  PanelModule, FieldsetModule, GrowlModule, CarouselModule } from 'primeng/primeng';
 
 
 
@@ -86,6 +88,7 @@ import { CasualityComponent } from './casuality/casuality.component';
     CarouselModule,
     ChartModule,
     DialogModule,
+    TabViewModule,
     RouterModule.forRoot(ROUTES)
 
   ],
