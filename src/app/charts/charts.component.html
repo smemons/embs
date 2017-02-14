@@ -2,8 +2,10 @@
     <p-tabPanel header="Incident Analysis">
         <p-chart type="bar" [data]="data"></p-chart>
     </p-tabPanel>
-    <p-tabPanel header="Real time Analysis">
-        <div><button (click)="startReal(barchart)" class="btn btn-primary">Start Reading real time Data</button></div>
-        <p-chart #barchart type="line" [data]="dataReal" (onDataSelect)="selectRealData($event)"></p-chart>
-    </p-tabPanel>
+    <div style="width: 100%; height: 400px;">
+        <p-tabPanel header="Real time Analysis">
+            <div><button (click)="startReal(barchart)" class="btn btn-primary">Start Reading real time Data</button></div>
+            <p-chart #barchart type="line" height="100" [data]="dataReal" (onDataSelect)="selectRealData($event)"></p-chart>
+        </p-tabPanel>
+    </div>
 </p-tabView>
