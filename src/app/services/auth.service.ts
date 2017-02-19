@@ -33,7 +33,8 @@ export class AuthService {
 
   authenticate(usr: User) {
 
-
+   usr.username=usr.username.toLowerCase();
+   usr.password=usr.password.toLowerCase();
     return this
       .http
       .post('/api/user/authenticate', usr, this.jwt())
