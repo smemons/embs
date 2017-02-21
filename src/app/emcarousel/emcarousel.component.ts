@@ -35,8 +35,8 @@ export class EmcarouselComponent implements OnInit {
     this.msgs = [];
     this.msgs.push({
       severity: 'info',
-      summary: 'Car Selected',
-      detail: 'Vin:' + car.vin
+      summary: 'EVENT Selected',
+      detail: "Dispaly detail...."
     });
   }
 
