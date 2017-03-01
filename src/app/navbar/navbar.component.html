@@ -15,45 +15,45 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a [routerLink]="['/dashboard']"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Dashboard</a></li>
+                <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a [routerLink]="['/dashboard']"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Dashboard</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a [routerLink]="['/listPosts']"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> List All</a></li>
-                        <li><a><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> New Post</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a [routerLink]="['/listPosts']"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> List All</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> New Post</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Incidents <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a [routerLink]="['/listIncident']"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> List All</a></li>
-                        <li><a [routerLink]="['/newIncident']"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> New Incident</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a [routerLink]="['/listIncident']"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> List All</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a [routerLink]="['/newIncident']"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> New Incident</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> Rooms<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a>Overview</a></li>
-                        <li><a [routerLink]="['/listRooms']">List</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a>Overview</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a [routerLink]="['/listRooms']">List</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a [routerLink]="['/newRoom']">New</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a [routerLink]="['/newRoom']">New</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> User Management <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a>Overview</a></li>
-                        <li><a [routerLink]="['/register']">Register</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a>Overview</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a [routerLink]="['/register']">Register</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a [routerLink]="['/listUsers']">List All users</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a [routerLink]="['/listUsers']">List All users</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Analytics<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a [routerLink]="['/charts']">Overview</a></li>
-                        <li><a [routerLink]="['/charts']">Room Analytics</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a [routerLink]="['/charts']">Overview</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a [routerLink]="['/charts']">Room Analytics</a></li>
 
                     </ul>
                 </li>
@@ -78,18 +78,14 @@
             <li><a href="http://www.cubetech.ch" target="_blank">cubetech.ch</a></li>
           </ul>
         </li>-->
-                <li>
-                    <a *ngIf="!isUserLoggedIn()" [routerLink]="['/register']"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Register 2</a>
-                </li>
-
-                <li>
+                <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <a *ngIf="!isUserLoggedIn()" [routerLink]="['/register']"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Register</a>
                 </li>
-                <li><a *ngIf="!isUserLoggedIn()" [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
+                <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a *ngIf="!isUserLoggedIn()" [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
                 <li class="dropdown">
                     <a *ngIf="isUserLoggedIn()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{authService.getCurrentUser()}}<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> User Settings</a></li>
+                        <li data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><a><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> User Settings</a></li>
                         <li><a href="#" (click)='logout($event)'><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
                     </ul>
                 </li>
